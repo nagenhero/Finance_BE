@@ -1,0 +1,61 @@
+@rooturl=http://localhost:9001/api/v1
+@userEP={{rooturl}}/users
+@transactionEp={{rooturl}}/transactions
+
+ POST {{userEP}}/register
+ Content-Type: application/json
+
+ {
+    "username":"elons",
+    "email": "trmpk@gmail.com",
+    "password": "dented"
+ }
+###
+
+
+POST {{userEP}}/login
+Content-Type: application/json
+
+ {
+    "email":"trmpk@gmail.com",
+    "password": "dented"
+ }
+
+ 
+###
+#creating transaction
+POST {{transactionEp}}
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRybXBrQGdtYWlsLmNvbSIsImlhdCI6MTczODY0MDQ5MSwiZXhwIjoxNzM4NzI2ODkxfQ.77Lrtn4RpMIOSZhZJba97aJ7zexbwkSLlYCHXzys90A
+
+{
+   "type":"Expense",
+    "amount":23,
+    "date": "10-01-2023",
+    "description":"pani puri"
+ }
+###
+
+GET  {{transactionEp}}
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRybXBrQGdtYWlsLmNvbSIsImlhdCI6MTczODUzNjE4OSwiZXhwIjoxNzM4NjIyNTg5fQ.8mT2inOL3_upqGPdL7BuWaovdUNGy6Aor_loRgQexkQ
+
+
+###
+DELETE {{transactionEp}}/67981b8db7044ae61c097aa9
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzc1NTU0BnbWFpbC5jb20iLCJpYXQiOjE3MzgwMjczMzgsImV4cCI6MTczODExMzczOH0.QUEGTrRJg544vLh6VI1W0QUZU32f3EWYuSSjIHy-Ctw
+
+
+
+
+###
+DELETE {{transactionEp}}
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzc1NTU0BnbWFpbC5jb20iLCJpYXQiOjE3MzgwMjczMzgsImV4cCI6MTczODExMzczOH0.QUEGTrRJg544vLh6VI1W0QUZU32f3EWYuSSjIHy-Ctw
+
+
+{
+   "transactions": [
+      "679831636157ff4a0dbcc91f",
+      "67981b72b7044ae61c097aa6"
+   ]
+}

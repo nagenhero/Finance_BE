@@ -1,0 +1,30 @@
+{
+  "name": "finance_be",
+  "version": "1.0.0",
+  "description": "Backend: Node.js with Express.js Database: MongoDB (hosted on MongoDB Atlas) Authentication: JWT (JSON Web Tokens) Deployment: Frontend: Deployed on Netlify or Vercel Backend: Deployed on Render or Cyclic 4. Database Design Users Collection: _id: ObjectId username: String  email: String (unique) password: String (hashed) createdAt: Date Transactions Collection: _id: ObjectId userId: ObjectId (reference to Users collection) type: String (Income/Expense) amount: Number date: Date description: String createdAt: Date 5. Security Considerations Passwords will be hashed before storage using bcrypt. JWT will be used for authentication with secure cookie storage. HTTPS will be enforced on both frontend and backend deployments.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nagenhero/Finance_BE.git"
+  },
+  "author": " nagen shreshta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nagenhero/Finance_BE/issues"
+  },
+  "homepage": "https://github.com/nagenhero/Finance_BE#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5"
+  }
+}
